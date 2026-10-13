@@ -25,9 +25,10 @@
 ## 文件
 
 - `index.html`、`scene.mjs`、`exploration.mjs`、样式文件与 `vendor/`：完整实时白模及交互。
-- `artwork/first-frame-life-science.png`：基于实际白模首帧生成的生命科学演示风格图片。
-- `artwork/first-frame-whitebox.png`：实际场景的灰阶首帧参考。
-- `artwork/first-frame-prompt.txt`：图片生成提示词。
+- `artwork/first-frame-00s-life-science.png`：基于导览 0 秒血管内白模生成的生命科学演示风格首帧。
+- `artwork/first-frame-00s-whitebox.png`：对应的导览 0 秒灰阶参考。
+- `artwork/first-frame-00s-prompt.txt`：0 秒首帧的完整生成提示词。
+- `artwork/first-frame-life-science.png`、`first-frame-whitebox.png`、`first-frame-prompt.txt`：之前的组织环境概念图、参考及提示词，保留作其他阶段参考。
 - `resources/neutrophil-atlas.worldkit.zip`：Atlas 工具校验的静态视觉资产包，包含中性粒细胞与四幕基础场景，不含程序化实时动画或 48 片区扩展世界。
 - `resources/neutrophil-whitebox-actor.glb`：可导入 Blender 的中性粒细胞静态模型。
 

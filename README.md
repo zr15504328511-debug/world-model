@@ -11,9 +11,9 @@
 | --- | --- | --- |
 | `cell demo/` | 中性粒细胞微观世界；48 个片区、16 种空间形态、三层空间及 75 秒四幕导览 | 移动、升降、地图跳转、自由观察、吞噬交互 |
 
-![Cell Demo 生命科学风格首帧](cell%20demo/artwork/first-frame-life-science.png)
+![Cell Demo 导览 0 秒血管内首帧](cell%20demo/artwork/first-frame-00s-life-science.png)
 
-首帧图片由 ImageGen 以实际白模首帧为参考生成，作为生命科学演示风格的概念图。实时场景保持灰阶白模，图片没有替代可操作场景。
+首帧图片由内置 ImageGen 以导览 0 秒的血管内白模画面为参考生成，呈现血管壁、红细胞和悬浮的中性粒细胞。实时场景保持灰阶白模，图片没有替代可操作场景。原组织环境概念图仍保留在 `cell demo/artwork/first-frame-life-science.png`。
 
 ## 本地运行
 
