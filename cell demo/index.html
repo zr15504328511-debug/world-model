@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中性粒细胞 · 微观旅程</title>
+<meta name="description" content="16:9 灰阶白模微观场景。跟随中性粒细胞经历血流、穿越内皮、组织趋化与吞噬。">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./exploration.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.mjs"}}</script>
+</head>
+<body>
+<main id="app">
+ <div id="stage" role="img" aria-label="无字幕的白模微观场景，中性粒细胞在血管与组织中运动">
+  <canvas id="scene" aria-label="可拖动观察的三维场景"></canvas>
+  <div id="loading" aria-live="polite"><span class="loader" aria-hidden="true"></span></div>
+  <div id="error" hidden role="alert"></div>
+  <div id="world-map" hidden><canvas id="map-canvas" width="640" height="480" aria-label="无文字探索地图，点击节点可前往对应区域"></canvas></div>
+  <div id="touch-move" aria-label="触屏移动控制"><button data-key="KeyW" aria-label="前进">↑</button><div><button data-key="KeyA" aria-label="左移">←</button><button data-key="KeyS" aria-label="后退">↓</button><button data-key="KeyD" aria-label="右移">→</button></div></div>
+ </div>
+ <div class="dock" aria-label="场景操作">
+  <div class="tools">
+   <button id="play" aria-label="暂停" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button>
+   <button id="reset" aria-label="重新播放"><svg viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6"/></svg></button>
+   <button id="explore" aria-label="切换自由探索" aria-pressed="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5z"/></svg></button>
+   <button id="pilot" aria-label="切换摄影机飞行" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M8 4 4 8v8l4 4h8l4-4V8l-4-4z"/><circle cx="10" cy="10" r="2"/><circle cx="14" cy="14" r="2"/></svg></button>
+   <span class="divider"></span>
+   <button id="follow" aria-label="切换自由观察" aria-pressed="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></button>
+   <button id="signals" aria-label="隐藏化学信号粒子" aria-pressed="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="8" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="18" cy="15" r="1"/><circle cx="9" cy="18" r="1"/><circle cx="12" cy="11" r="2"/></svg></button>
+  </div>
+  <div class="transport">
+   <input id="timeline" type="range" min="0" max="75" step="0.01" value="0" aria-label="播放进度，0 至 75 秒">
+   <div class="chapters" aria-label="四幕跳转">
+    <button class="chapter active" data-time="0" aria-label="第一幕：血流漂流"><span></span></button>
+    <button class="chapter" data-time="15" aria-label="第二幕：脱离血流"><span></span></button>
+    <button class="chapter" data-time="35" aria-label="第三幕：组织迷宫"><span></span></button>
+    <button class="chapter" data-time="55" aria-label="第四幕：微观遭遇"><span></span></button>
+   </div>
+  </div>
+  <div class="tools">
+   <button id="map" aria-label="打开探索地图" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3zM9 3v15M15 6v15"/></svg></button>
+   <button id="help" aria-label="操作介绍" aria-expanded="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></svg></button>
+   <button id="fullscreen" aria-label="全屏"><svg viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M8 21H3v-5"/></svg></button>
+  </div>
+ </div>
+ <div id="instructions">
+  <p>WASD / 方向键移动 · Q / E 升降 · Shift 加速 · 拖动旋转 · 滚轮 / 双指缩放</p>
+  <p>M 打开地图，点击节点前往 48 片探索区域 · 空格吞噬附近细菌 · C 切换细胞操控 / 摄影机飞行</p>
+  <p>指南针切换探索 / 导览 · 播放键进入 75 秒导览 · 1–4 跳转分幕 · R 重播 · H 隐藏操作介绍</p>
+ </div>
+ <p id="status" class="sr-only" aria-live="polite"></p>
+</main>
+<script type="module" src="./scene.mjs"></script>
+</body></html>

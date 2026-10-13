@@ -1,0 +1,10 @@
+.env
+.env.*
+*.env
+.private/
+node_modules/
+*.log
+*.blend1
+.cache/
+Thumbs.db
+Desktop.ini

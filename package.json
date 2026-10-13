@@ -1,0 +1,1 @@
+{"name":"world-model","version":"1.0.0","private":true,"type":"module","scripts":{"start":"node tools/serve.mjs","check":"node --check \"cell demo/scene.mjs\" && node --check \"cell demo/exploration.mjs\""}}

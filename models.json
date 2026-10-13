@@ -1,0 +1,11 @@
+[
+  {
+    "id":"cell-demo",
+    "title":"Cell Demo",
+    "description":"中性粒细胞的微观旅程，支持自由探索、吞噬交互与四幕导览。",
+    "detail":"48 片区 · 16 种空间形态 · 三层网络",
+    "path":"./cell%20demo/",
+    "preview":"./cell%20demo/artwork/first-frame-life-science.png",
+    "frame":"./cell%20demo/artwork/first-frame-life-science.png"
+  }
+]
